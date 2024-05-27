@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "dramatic_particles",
+  "version": "${version}",
+  "name": "Dramatic Particles",
+  "description": "This is an example description! Tell everyone what your mod is about!",
+  "authors": [
+    "Me!"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+  "license": "GNU GPLv3",
+  "icon": "assets/dramatic_particles/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.pixeldreamstudios.dramatic_particles.fabric.DramaticParticlesFabric"
+    ],
+    "client": [
+      "net.pixeldreamstudios.dramatic_particles.fabric.client.DramaticParticlesFabricClient"
+    ]
+  },
+  "mixins": [
+    "dramatic_particles.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.11",
+    "minecraft": "~1.20.1",
+    "java": ">=17",
+    "architectury": ">=9.2.14",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
