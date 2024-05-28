@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(Explosion.class)
 public class ExplosionMixin {
-    private static final ParticleEmitterInfo LEVEL_UP = new ParticleEmitterInfo(new ResourceLocation(DramaticParticles.MOD_ID, "level_up"));
+    private static final ParticleEmitterInfo EXPLOSION = new ParticleEmitterInfo(new ResourceLocation(DramaticParticles.MOD_ID, "level_up"));
 
     @Shadow @Final
     private Level level;
@@ -30,7 +30,7 @@ public class ExplosionMixin {
     private void renderExplosionParticles(boolean bl, CallbackInfo ci) {
         if (DramaticParticles.config.explosionEffect) {
             DramaticParticles.LOGGER.info("EXPLOSION");
-            AAALevel.addParticle(level, false, LEVEL_UP.clone().scale(1.0f).position(x + 0.5d, y, z + 0.5d));
+            AAALevel.addParticle(level, false, EXPLOSION.clone().scale(1.0f).position(x + 0.5d, y, z + 0.5d));
         }
     }
 }
