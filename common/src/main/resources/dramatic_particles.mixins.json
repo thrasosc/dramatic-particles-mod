@@ -8,7 +8,8 @@
     "ServerPlayerMixin",
     "BeaconBlockEntityMixin",
     "ExplosionMixin",
-    "TamableAnimalMixin"
+    "TamableAnimalMixin",
+    "PortalShapeMixin"
   ],
   "mixins": [
   ],

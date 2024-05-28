@@ -12,4 +12,5 @@ public class DramaticParticlesConfig implements ConfigData {
     public final boolean playerLevelUpEffect = true;
     public final boolean explosionEffect = true;
     public final boolean tamingEffect = true;
+    public final boolean netherPortalEffect = true;
 }
