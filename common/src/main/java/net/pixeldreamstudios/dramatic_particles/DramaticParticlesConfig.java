@@ -10,4 +10,5 @@ public class DramaticParticlesConfig implements ConfigData {
     public final boolean beaconActivateEffect = true;
     public final boolean criticalHitEffect = true;
     public final boolean playerLevelUpEffect = true;
+    public final boolean explosionEffect = true;
 }
