@@ -6,7 +6,8 @@
   "client": [
     "LivingEntityMixin",
     "PlayerMixin",
-    "ServerPlayerMixin"
+    "ServerPlayerMixin",
+    "BeaconBlockEntityMixin"
   ],
   "mixins": [
   ],
