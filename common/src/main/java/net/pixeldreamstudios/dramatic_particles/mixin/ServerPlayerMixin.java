@@ -21,7 +21,9 @@ public class ServerPlayerMixin {
 
     @Inject(at = @At("HEAD"), method = "crit")
     private void renderCriticalHitParticles(Entity entity, CallbackInfo ci) {
-        DramaticParticles.LOGGER.info("CRITICAL HIT");
-        AAALevel.addParticle(level, false, CRITICAL_HIT.clone().scale(1.0f).position(entity.getX(), entity.getBlockY() + 1.0d, entity.getZ()));
+        if (DramaticParticles.config.criticalHitEffect) {
+            DramaticParticles.LOGGER.info("CRITICAL HIT");
+            AAALevel.addParticle(level, false, CRITICAL_HIT.clone().scale(1.0f).position(entity.getX(), entity.getBlockY() + 1.0d, entity.getZ()));
+        }
     }
 }

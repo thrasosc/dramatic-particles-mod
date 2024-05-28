@@ -19,7 +19,9 @@ public class BeaconBlockEntityMixin {
 
     @Inject(at = @At("HEAD"), method = "Lnet/minecraft/world/level/block/entity/BeaconBlockEntity;playSound(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/sounds/SoundEvent;)V")
     private static void renderBeaconActivateParticles(Level level, BlockPos blockPos, SoundEvent soundEvent, CallbackInfo ci) {
-        DramaticParticles.LOGGER.info("ACTIVATED BEACON");
-        AAALevel.addParticle(level, false, BEACON_ACTIVATE.clone().scale(1.0f).position(blockPos.getX() + 0.5d, blockPos.getY(), blockPos.getZ() + 0.5d));
+        if (DramaticParticles.config.beaconActivateEffect) {
+            DramaticParticles.LOGGER.info("ACTIVATED BEACON");
+            AAALevel.addParticle(level, false, BEACON_ACTIVATE.clone().scale(1.0f).position(blockPos.getX() + 0.5d, blockPos.getY(), blockPos.getZ() + 0.5d));
+        }
     }
 }

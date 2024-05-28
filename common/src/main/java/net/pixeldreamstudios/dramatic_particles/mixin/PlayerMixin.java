@@ -20,7 +20,9 @@ public class PlayerMixin {
 
     @Inject(at = @At("HEAD"), method = "Lnet/minecraft/world/entity/player/Player;giveExperienceLevels(I)V")
     private void renderLevelUpParticles(int i, CallbackInfo ci) {
-        DramaticParticles.LOGGER.info("LEVEL UP");
-        AAALevel.addParticle(level, false, LEVEL_UP.clone().scale(1.0f).position(thisPlayer.getX(), thisPlayer.getBlockY(), thisPlayer.getZ()));
+        if (DramaticParticles.config.playerLevelUpEffect) {
+            DramaticParticles.LOGGER.info("LEVEL UP");
+            AAALevel.addParticle(level, false, LEVEL_UP.clone().scale(1.0f).position(thisPlayer.getX(), thisPlayer.getBlockY(), thisPlayer.getZ()));
+        }
     }
 }
